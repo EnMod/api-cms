@@ -1,21 +1,19 @@
-#Using txti.es to make the world's smallest CMS
+#Using any raw HTML API to make the world's smallest CMS
 
-Turn any html page into a Markdown-driven CMS using [txti.es](http://txti.es) and just 25 lines of JavaScript. 
-
-[View a demo](http://barrytsmith.com/lab/txti-cms/).
+Turn any html page into a Markdown-driven CMS using services such as [txti.es](http://txti.es) or [Canvas](https://usecanvas.com), with just 25 lines of JavaScript. 
 
 ##Step 1
 
-Create an HTML file. Each element that you would like to populate with HTML from a [txti](http://txti.es) page should get and attribute of `data-src="http://txti.es/your-unique-url-here/html"`.
+Create an HTML file. Each element that you would like to populate with HTML from an API call should get an attribute of `data-src="http://item's.html.endpoint/here"`.  Additionally, add a `data-srv="serviceName"` attribute to change how the JS will parse the received data:
+- For txti.es: `txti` or leave blank as this is the default
+- For Canvas: `canvas`
 
-If you haven't created the txti pages yet, do so in this step. Be sure to email all information to yourself in the process so you can make changes later.
+If you haven't created the desired site content yet on your preferred service, do so in this step.
 
 ##Step 2
 
-Past in the `<script>` tag in the index.html file above right before the closing `</body>` tag of your HTML file. You're done! You should get nice, clean HTML delivered from txti. (You can also include or paste the code from the txti-cms.min.js file for a compressed version)
+Include the `api-cms` script above the `</body>` tag of your HTML file. You're done! You should get nice, clean HTML delivered from your request. (You can also include or paste the code from the api-cms.min.js file for a compressed version)
 
-Because this solution requires JavaScript, it's recommended you put some helpful text with a link to the txti page inside of the element in case the user has JavaScript disabled. Txti itself uses no JavaScript and is lighting fast, so the content will be available.
+Because this solution requires JavaScript, it's recommended you put some helpful text with a link to the hosted entry inside of the element in case the user has JavaScript disabled. By requesting raw HTML you shouldn't have any dynamic components, such as JavaScript, so make sure your preferred service's entry is publicly visible.
 
-##Update your site by updating your txti files 
 
-Txti uses GitHub flavored [Markdown syntax](http://txti.es/how).
